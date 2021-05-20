@@ -1,13 +1,13 @@
-97dec53afda1b8b3841baecfec098932 *DESCRIPTION
+7bfc1b807aa0bb47e2315ee4401c206b *DESCRIPTION
 73197322252dc57da16432c17ad9c29d *NAMESPACE
-1b4d51c05ecaf579784a8c61eaa3b3b8 *NEWS.md
-8815a873570e4c9db40c44b9f2683fde *R/fitbit_utils.R
-d9cad9a595a691c7c781eae120fd85f6 *README.md
+a191a235532873e532fb383d0ee4bc43 *NEWS.md
+05208077497fc63637e5b71df6cbeb58 *R/fitbit_utils.R
+3c2fd29efa0607ba72c213fa8213d8e5 *README.md
 ea3b1e51cb44b7061f4b2273835f28bb *build/vignette.rds
 447fd53c4fe89a2811b3f754f2c60281 *inst/CITATION
-898f57f1d5d8c3c37b87b3eb9c694d32 *inst/doc/fitbit_viz.R
-3c6f29153b051031c9ab885f9ce92ac6 *inst/doc/fitbit_viz.Rmd
-5c435df3312a1430693ab255a7317846 *inst/doc/fitbit_viz.html
+6ff6df549f159b31d17dcfd760a15164 *inst/doc/fitbit_viz.R
+3df8c25b0cb81b5adf9d3706b82e997a *inst/doc/fitbit_viz.Rmd
+75389a7c6d0b5525cf9421f15a436777 *inst/doc/fitbit_viz.html
 da5e47bd4acf0b513af837251fa59558 *inst/tests_vignette_rds/heart_dat.RDS
 9ef0e580db687b15c87f16aa9f2a7035 *inst/tests_vignette_rds/raysh_rst.tif
 140b2c521ded8c343355fb4c778394aa *inst/tests_vignette_rds/res_tcx.RDS
@@ -19,6 +19,9 @@ b91db1f2720a36f123d73a724a925491 *man/compute_elapsed_time.Rd
 5e0839953212097096ca75bd447189c9 *man/extend_AOI_buffer.Rd
 3b88e43a7a363c1306ed1704a76a1877 *man/extract_LOG_ID.Rd
 3e132470901d53880c43d186e0a6c80c *man/figures/application_registered.png
+b0d48bb44652968887fd49b49384933c *man/figures/cron_job_setup.png
+51fc49d57a1cbaa97fa7c4f09dc8acc5 *man/figures/csv_button.png
+c6ba5a70921f804e429e55a129eb5b77 *man/figures/fitbit_parameters.png
 b5471cc587fa94d4b75760f85e5ed99c *man/figures/one_year_long.png
 7e9dbe0cf34ba362912000c5c8309007 *man/figures/register_application.png
 317fbfbb887d3fec01d23d09cc57c321 *man/ggplot_each_date.Rd
@@ -40,4 +43,4 @@ c2db3c9e1831db7be2b09ec6c1e6dd5a *man/sleep_single_day.Rd
 7f6c03126f8bcbb889d7ae6ffee82662 *vignettes/data_plots/heart_rate_variability.png
 03176d17857805a0bd7f5da960159d31 *vignettes/data_plots/heatmap.png
 cef89e119ffced9f28b9686a0c48e632 *vignettes/data_plots/sleep_time_levels.png
-3c6f29153b051031c9ab885f9ce92ac6 *vignettes/fitbit_viz.Rmd
+3df8c25b0cb81b5adf9d3706b82e997a *vignettes/fitbit_viz.Rmd

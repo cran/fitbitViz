@@ -30,13 +30,14 @@ build_vignette_with_user_id_token = FALSE
 if (build_vignette_with_user_id_token) {
   
   knitr::opts_chunk$set(fig.width = 12,
-                      fig.height = 10, 
-                      fig.align = "center",
-                      warning = FALSE, 
-                      message = FALSE,
-                      echo = TRUE, 
-                      cache = TRUE,
-                      cache.rebuild = TRUE)    # for 'cache.rebuild' see the references
+                        fig.height = 10, 
+                        fig.align = "center",
+                        warning = FALSE, 
+                        message = FALSE,
+                        eval = TRUE,
+                        echo = TRUE, 
+                        cache = TRUE,
+                        cache.rebuild = TRUE)    # for 'cache.rebuild' see the references
   
   USER_ID = 'use the true user-id here'
   token = 'use the true token here'

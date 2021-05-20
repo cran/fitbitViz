@@ -1025,11 +1025,6 @@ leafGL_point_coords = function(dat_gps_tcx,
                                option_viewer = rstudioapi::viewer,
                                CRS = 4326) {
 
-  #.............................  reset the options on.exit()
-  init_options <- options()
-  on.exit(options(init_options))
-  #.............................
-
   options(viewer = option_viewer)
 
   dat_gps_tcx = sf::st_as_sf(dat_gps_tcx, coords = c("longitude", "latitude"))          # create a simple feature from lat, lon
@@ -1053,7 +1048,7 @@ leafGL_point_coords = function(dat_gps_tcx,
   lft = leafgl::addGlPoints(map = lft,
                             data = dat_gps_tcx,
                             opacity = 1.0,
-                            color = COLOR,
+                            fillColor = COLOR,
                             popup = popup_info)
 
   def_lft = leaflet::fitBounds(map = lft,
@@ -1466,12 +1461,6 @@ meshgrids_XY_LatLon = function(longitude,
                                buffer_bbox,
                                distance_metric = "vincenty",
                                digits = 8) {
-
-  #.............................  reset the options on.exit()
-  init_options <- options()
-  on.exit(options(init_options))
-  #.............................
-
   options(digits = digits)
 
   DIMS = dim(buffer_raster)[1:2]
