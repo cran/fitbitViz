@@ -1,13 +1,13 @@
-7bfc1b807aa0bb47e2315ee4401c206b *DESCRIPTION
+dd60d0991cbc90332e75eefa8682aab0 *DESCRIPTION
 73197322252dc57da16432c17ad9c29d *NAMESPACE
-a191a235532873e532fb383d0ee4bc43 *NEWS.md
-05208077497fc63637e5b71df6cbeb58 *R/fitbit_utils.R
-3c2fd29efa0607ba72c213fa8213d8e5 *README.md
+e9f3760d51d05a44943bd854557d3750 *NEWS.md
+616d6f452ad6f53eb82efe798236d744 *R/fitbit_utils.R
+9124b11dedc161d8c59d4c8959ad7b0a *README.md
 ea3b1e51cb44b7061f4b2273835f28bb *build/vignette.rds
 447fd53c4fe89a2811b3f754f2c60281 *inst/CITATION
-6ff6df549f159b31d17dcfd760a15164 *inst/doc/fitbit_viz.R
-3df8c25b0cb81b5adf9d3706b82e997a *inst/doc/fitbit_viz.Rmd
-75389a7c6d0b5525cf9421f15a436777 *inst/doc/fitbit_viz.html
+c3e9acf9d2cac4cda2fca8502a83256d *inst/doc/fitbit_viz.R
+62476b397dff878673a9901438b56e80 *inst/doc/fitbit_viz.Rmd
+bf9d0fa0e1723d98bf7d3a876e460643 *inst/doc/fitbit_viz.html
 da5e47bd4acf0b513af837251fa59558 *inst/tests_vignette_rds/heart_dat.RDS
 9ef0e580db687b15c87f16aa9f2a7035 *inst/tests_vignette_rds/raysh_rst.tif
 140b2c521ded8c343355fb4c778394aa *inst/tests_vignette_rds/res_tcx.RDS
@@ -21,7 +21,7 @@ b91db1f2720a36f123d73a724a925491 *man/compute_elapsed_time.Rd
 3e132470901d53880c43d186e0a6c80c *man/figures/application_registered.png
 b0d48bb44652968887fd49b49384933c *man/figures/cron_job_setup.png
 51fc49d57a1cbaa97fa7c4f09dc8acc5 *man/figures/csv_button.png
-c6ba5a70921f804e429e55a129eb5b77 *man/figures/fitbit_parameters.png
+569dbddd16c58f32ba35eb25596c85bd *man/figures/fitbit_parameters.png
 b5471cc587fa94d4b75760f85e5ed99c *man/figures/one_year_long.png
 7e9dbe0cf34ba362912000c5c8309007 *man/figures/register_application.png
 317fbfbb887d3fec01d23d09cc57c321 *man/ggplot_each_date.Rd
@@ -32,7 +32,7 @@ c016ed992a3c8ee700d9fd341df497d6 *man/gps_lat_lon_to_LINESTRING.Rd
 2ced10ab7b0a84d7ca0ecfacd7df5083 *man/inner_elapsed_time.Rd
 8fe01d07ce3448c3533329314c6ebc3f *man/leafGL_point_coords.Rd
 87b0546fe71be84ec11bcab9f932c3e0 *man/meshgrids_XY_LatLon.Rd
-a11909ae7374f7399da8f6479ec0300c *man/rayshader_3d_DEM.Rd
+3b6ae1d8a8284ea95a934a7feb13345a *man/rayshader_3d_DEM.Rd
 f86a41295d99913e7780d32260d7762a *man/sleep_heatmap.Rd
 c2db3c9e1831db7be2b09ec6c1e6dd5a *man/sleep_single_day.Rd
 7279364492fb9197f5def1edcc95cd84 *man/sleep_time_series.Rd
@@ -42,5 +42,6 @@ c2db3c9e1831db7be2b09ec6c1e6dd5a *man/sleep_single_day.Rd
 65d776cf01928e4017f4cf0aac3cf7db *vignettes/data_plots/heart_rate_time_series.png
 7f6c03126f8bcbb889d7ae6ffee82662 *vignettes/data_plots/heart_rate_variability.png
 03176d17857805a0bd7f5da960159d31 *vignettes/data_plots/heatmap.png
+e0e4ed2b428a708f9f2aa40cdc504a7f *vignettes/data_plots/rayshader_map.png
 cef89e119ffced9f28b9686a0c48e632 *vignettes/data_plots/sleep_time_levels.png
-3df8c25b0cb81b5adf9d3706b82e997a *vignettes/fitbit_viz.Rmd
+62476b397dff878673a9901438b56e80 *vignettes/fitbit_viz.Rmd

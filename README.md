@@ -8,6 +8,9 @@ visualization of *‘ggplot2’*, *‘Leaflet’* and *3-dimensionsal
 ‘Rayshader’ Maps* using the [Fitbit Web
 API](https://dev.fitbit.com/build/reference/web-api/). If you own any of
 the **Fitbit activity trackers** you can take advantage of this package.
+A detailed explanation of the functionality can be found both in the
+Vignette and in the [blog
+post](http://mlampros.github.io/2021/05/20/fitbitViz_package/).
 
 The 3-dimensional Rayshader Map requires the installation of the
 [CopernicusDEM](https://github.com/mlampros/CopernicusDEM) R package
@@ -94,7 +97,8 @@ website](https://mlampros.github.io/fitbitVizBlog/). The following steps
 explain in detail how this can be achieved:
 
 -   Fork the [fitbitVizBlog](https://github.com/mlampros/fitbitVizBlog)
-    repository
+    repository ( **!!! Not this repository but the one that includes the
+    blog posts !!!** )
 -   Create the following **secrets** required for the
     [.github/workflows/gh\_fitbit\_blog.yaml](https://github.com/mlampros/fitbitVizBlog/blob/master/.github/workflows/gh_fitbit_blog.yaml)
     file by navigating to **Settings** &gt;&gt; **secrets** (*be aware
@@ -141,14 +145,15 @@ Regarding the **fitbitViz** parameters
 ([.github/workflows/gh\_fitbit\_blog.yaml](https://github.com/mlampros/fitbitVizBlog/blob/master/.github/workflows/gh_fitbit_blog.yaml)
 file) at it’s current state the application takes:
 
+-   **DATE**: this parameter corresponds to the current Date ( the Date
+    that the **Cron-Job** runs ). You can set this parameter also to a
+    character string such as **DATE=“2021-05-16”;** if you want to use
+    as the end Date this specific date. **Be Aware** this parameter is
+    defined in a separate github action step.
 -   **previous\_n\_days**: this parameter specifies the number of days
     before the current **DATE** for which the Fitbit data will be
     downloaded (I’ve set it to **6** to visualize and access data of the
     **last** week)
--   **DATE**: this parameter corresponds to the current Date ( the Date
-    that the **Cron-Job** runs ). You can set this parameter also to a
-    character string such as **DATE=“2021-05-16”;** if you want to use
-    as the end Date this specific date.
 -   **sleep\_time\_begins**: this is your scheduled sleep time in form
     of a **lubridate::hms(“00H 40M 0S”)** object (adjust the input
     depending on your sleep time)
@@ -157,14 +162,16 @@ file) at it’s current state the application takes:
     depending on your wake up time)
 -   **asc\_desc\_linestring**: this parameter is related to the GPS data
     of the **3-dimensional** map especially if you keep track of your
-    outdoor activities. There are **3 options**:
-    -   by specifying **asc\_desc\_linestring="";** a single LINESTRING
+    outdoor activities. There are **3 options** but before making use of
+    the **2nd. option make sure** that there is an ascending and
+    descending route, otherwise it will give an error:
+    1.  by specifying **asc\_desc\_linestring="";** a single LINESTRING
         will be created based on the GPS data using a single color
-    -   by specifying **asc\_desc\_linestring=“TRUE”;** the LINESTRING
+    2.  by specifying **asc\_desc\_linestring=“TRUE”;** the LINESTRING
         of the GPS data will be split into 2 parts using the highest
         elevation location as a split point (**blue** color for the
         ascending part and **red** color for the descending part)
-    -   by specifying **asc\_desc\_linestring=“17H 5M 0S”;** the GPS
+    3.  by specifying **asc\_desc\_linestring=“17H 5M 0S”;** the GPS
         data will be split into 2 parts using this input time as split
         point (adjust the time based on your data)
 -   **time\_zone**: your current time zone as specified in
@@ -208,6 +215,87 @@ by clicking to a **CSV** button as shown in the next image,
     -   <https://obrl-soil.github.io/fitbit-api-r/>
     -   <https://github.com/orchid00/actions_sandbox/issues/41#issuecomment-816970613>
     -   <https://blog--simonpcouch.netlify.app/blog/r-github-actions-commit/>
+
+<br>
+
+### Docker Image:
+
+<br>
+
+**Docker images** of the *fitbitViz* package are available to download
+from my [dockerhub](https://hub.docker.com/r/mlampros/fitbitviz)
+account. The images come with *Rstudio* and the *R-development* version
+(latest) installed. The whole process was tested on Ubuntu 18.04. To
+**pull** & **run** the image do the following,
+
+<br>
+
+``` r
+docker pull mlampros/fitbitviz:rstudiodev
+
+docker run -d --name rstudio_dev -e USER=rstudio -e PASSWORD=give_here_your_password --rm -p 8787:8787 mlampros/fitbitviz:rstudiodev
+```
+
+<br>
+
+The user can also **bind** a home directory / folder to the image to use
+its files by specifying the **-v** command,
+
+<br>
+
+``` r
+docker run -d --name rstudio_dev -e USER=rstudio -e PASSWORD=give_here_your_password --rm -p 8787:8787 -v /home/YOUR_DIR:/home/rstudio/YOUR_DIR mlampros/fitbitviz:rstudiodev
+
+```
+
+<br>
+
+In the latter case you might have first give permission privileges for
+write access to **YOUR\_DIR** directory (not necessarily) using,
+
+<br>
+
+``` r
+chmod -R 777 /home/YOUR_DIR
+
+```
+
+<br>
+
+The **USER** defaults to *rstudio* but you have to give your
+**PASSWORD** of preference (see
+[www.rocker-project.org](https://www.rocker-project.org/) for more
+information).
+
+<br>
+
+Open your web-browser and depending where the docker image was *build /
+run* give,
+
+<br>
+
+**1st. Option** on your personal computer,
+
+<br>
+
+``` r
+http://0.0.0.0:8787 
+```
+
+<br>
+
+**2nd. Option** on a cloud instance,
+
+<br>
+
+``` r
+http://Public DNS:8787
+```
+
+<br>
+
+to access the Rstudio console in order to give your username and
+password.
 
 <br>
 

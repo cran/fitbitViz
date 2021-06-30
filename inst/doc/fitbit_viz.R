@@ -363,22 +363,24 @@ cols_3m = c('latitude', 'longitude', 'AltitudeMeters')
 dat_3m = res_tcx[idx_3m, ..cols_3m]
 
 
-## ---- echo = TRUE-------------------------------------------------------------
-
-snapshot_rayshader_path = file.path(tempdir(), 'rayshader_img.png')
-
-rgl::open3d(useNULL = TRUE)                       # this removes the second rgl-popup-window
-
-fitbitViz::rayshader_3d_DEM(rst_buf = raysh_rst,
-                            rst_ext = sf_rst_ext$raster_obj_extent,
-                            rst_bbx = sf_rst_ext$buffer_bbox,
-                            linestring_ASC_DESC = linestring_dat,
-                            elevation_sample_points = dat_3m,
-                            zoom = 0.3,
-                            windowsize = c(1000, 800))
-
-rgl::rgl.snapshot(snapshot_rayshader_path)
-rgl::par3d(mouseMode = "trackball")   # options: c("trackball", "polar", "zoom", "selecting")
-rgl::rglwidget()
-
+## ---- echo = TRUE, eval = FALSE-----------------------------------------------
+#  
+#  snapshot_rayshader_path = file.path(tempdir(), 'rayshader_img.png')
+#  
+#  rgl::open3d(useNULL = TRUE)                       # this removes the second rgl-popup-window
+#  
+#  fitbitViz::rayshader_3d_DEM(rst_buf = raysh_rst,
+#                              rst_ext = sf_rst_ext$raster_obj_extent,
+#                              rst_bbx = sf_rst_ext$buffer_bbox,
+#                              linestring_ASC_DESC = linestring_dat,
+#                              elevation_sample_points = dat_3m,
+#                              zoom = 0.3,
+#                              windowsize = c(1000, 800),
+#                              add_shadow_rescale_original = FALSE,
+#                              verbose = TRUE)
+#  
+#  rgl::rgl.snapshot(snapshot_rayshader_path)
+#  rgl::par3d(mouseMode = "trackball")   # options: c("trackball", "polar", "zoom", "selecting")
+#  rgl::rglwidget()
+#  
 
