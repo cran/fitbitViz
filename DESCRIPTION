@@ -1,8 +1,8 @@
 Package: fitbitViz
 Type: Package
 Title: 'Fitbit' Visualizations
-Version: 1.0.3
-Date: 2022-02-13
+Version: 1.0.4
+Date: 2022-03-07
 Authors@R: c( person(given = "Lampros", family = "Mouselimis", email = "mouselimislampros@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "https://orcid.org/0000-0002-8024-1546")) )
 Maintainer: Lampros Mouselimis <mouselimislampros@gmail.com>
 URL: https://github.com/mlampros/fitbitViz
@@ -21,7 +21,7 @@ RoxygenNote: 7.1.2
 VignetteBuilder: knitr
 Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2022-02-13 19:54:05 UTC; lampros
+Packaged: 2022-03-07 14:45:50 UTC; lampros
 Author: Lampros Mouselimis [aut, cre] (<https://orcid.org/0000-0002-8024-1546>)
 Repository: CRAN
-Date/Publication: 2022-02-14 08:00:02 UTC
+Date/Publication: 2022-03-07 15:10:02 UTC
