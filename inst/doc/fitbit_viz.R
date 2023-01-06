@@ -51,12 +51,33 @@ if (!build_vignette_with_user_id_token) {
 
 ## ---- eval = FALSE------------------------------------------------------------
 #  
+#  require(fitbitViz)
+#  
 #  #..................
 #  # parameter setting
 #  #..................
 #  
 #  USER_ID = 'My user-id'             # Specify here your 'user-id'
 #  token = "My token"                 # Specify here your 'token'
+#  
+
+## ---- eval = FALSE------------------------------------------------------------
+#  
+#  #..............................................
+#  # Refresh token once it expires (after 8 hours)
+#  #..............................................
+#  
+#  client_id = 'xxxxxx'
+#  client_secret = 'xxxxxxxxxxxxxxxxxx'
+#  refresh_token = 'xxxxxxxxxxxxxxxxxxxxxxxx'
+#  
+#  # refresh the token
+#  new_token = refresh_token_app(client_id = client_id,
+#                                client_secret = client_secret,
+#                                refresh_token = refresh_token)
+#  
+#  # a named list that includes the new 'access_token' and 'refresh_token'
+#  str(new_token)
 #  
 
 ## -----------------------------------------------------------------------------
@@ -137,38 +158,13 @@ dt_heart_rate
 #  # heart rate variability
 #  #.......................
 #  
-#  hrt_rt_var = fitbitViz::heart_rate_variability_sleep_time(heart_rate_data = heart_dat,
-#                                                            sleep_begin = sleep_time_begins,
-#                                                            sleep_end = sleep_time_ends,
-#                                                            ggplot_hr_var = TRUE,
-#                                                            angle_x_axis = 25)
-#  hrt_rt_var$hr_var_plot
+#  hrt_rt_var = fitbitViz::fitbit_data_type_by_date(user_id = USER_ID,
+#                                                   token = token,
+#                                                   date = as.character(date_start),
+#                                                   type = 'hrv',
+#                                                   plot = TRUE,
+#                                                   show_nchar_case_error = num_character_error)
 #  
-
-## ---- echo = TRUE-------------------------------------------------------------
-
-hrt_rt_var = fitbitViz::heart_rate_variability_sleep_time(heart_rate_data = heart_dat,
-                                                          sleep_begin = sleep_time_begins,
-                                                          sleep_end = sleep_time_ends,
-                                                          ggplot_hr_var = TRUE,
-                                                          angle_x_axis = 25)
-
-## ---- echo = FALSE------------------------------------------------------------
-
-#..............................................
-# DT::datatable() of the heart rate variability
-#..............................................
-
-dt_heart_rate_var = DT::datatable(data = hrt_rt_var$hr_var_data,
-                                  rownames = FALSE,
-                                  extensions = 'Buttons',
-                                  options = list(pageLength = 10,
-                                                 dom = 'Bfrtip',
-                                                 buttons = list(list(extend = 'csv',
-                                                                     filename = 'heart_rate_variability'))))
-
-dt_heart_rate_var
-
 
 ## ---- echo = TRUE, out.height = '1000px', eval = FALSE------------------------
 #  
@@ -185,7 +181,6 @@ dt_heart_rate_var
 #                                          ggplot_nrow = 4,
 #                                          show_nchar_case_error = num_character_error,
 #                                          verbose = VERBOSE)
-#  
 #  sleep_ts$plt_lev_segments
 #  
 
