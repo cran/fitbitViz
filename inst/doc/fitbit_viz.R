@@ -49,7 +49,7 @@ if (!build_vignette_with_user_id_token) {
 }
 
 
-## ---- eval = FALSE------------------------------------------------------------
+## ----eval = FALSE-------------------------------------------------------------
 #  
 #  require(fitbitViz)
 #  
@@ -61,7 +61,7 @@ if (!build_vignette_with_user_id_token) {
 #  token = "My token"                 # Specify here your 'token'
 #  
 
-## ---- eval = FALSE------------------------------------------------------------
+## ----eval = FALSE-------------------------------------------------------------
 #  
 #  #..............................................
 #  # Refresh token once it expires (after 8 hours)
@@ -100,7 +100,7 @@ sleep_time_ends = "08H 00M 0S"
 VERBOSE = FALSE                       # disable verbosity
 
 
-## ---- echo = TRUE, out.height = '1000px', eval = FALSE------------------------
+## ----echo = TRUE, out.height = '1000px', eval = FALSE-------------------------
 #  
 #  #.......................
 #  # heart rate time series
@@ -121,7 +121,7 @@ VERBOSE = FALSE                       # disable verbosity
 #  heart_dat$plt
 #  
 
-## ---- echo = FALSE------------------------------------------------------------
+## ----echo = FALSE-------------------------------------------------------------
 
 #...............................................
 # DT::datatable() as option to download the data  [ heart rate time series ]
@@ -139,7 +139,7 @@ dt_heart_rate = DT::datatable(data = dt_heart_rate_data,
 dt_heart_rate
 
 
-## ---- echo = TRUE, out.height = '1000px', eval = FALSE------------------------
+## ----echo = TRUE, out.height = '1000px', eval = FALSE-------------------------
 #  
 #  #............................
 #  # heart rate intraday heatmap [ plot options: https://yihui.org/knitr/options/#plots ]
@@ -152,7 +152,7 @@ dt_heart_rate
 #  hrt_heat
 #  
 
-## ---- echo = TRUE, eval = FALSE-----------------------------------------------
+## ----echo = TRUE, eval = FALSE------------------------------------------------
 #  
 #  #.......................
 #  # heart rate variability
@@ -166,7 +166,7 @@ dt_heart_rate
 #                                                   show_nchar_case_error = num_character_error)
 #  
 
-## ---- echo = TRUE, out.height = '1000px', eval = FALSE------------------------
+## ----echo = TRUE, out.height = '1000px', eval = FALSE-------------------------
 #  
 #  #.......................
 #  # sleep data time series
@@ -184,7 +184,7 @@ dt_heart_rate
 #  sleep_ts$plt_lev_segments
 #  
 
-## ---- echo = FALSE------------------------------------------------------------
+## ----echo = FALSE-------------------------------------------------------------
 
 #.....................................
 # DT::datatable() of the sleep heatmap
@@ -201,7 +201,7 @@ dt_sleep_heatmap = DT::datatable(data = sleep_ts$heatmap_data,
 dt_sleep_heatmap
 
 
-## ---- echo = TRUE, eval = FALSE-----------------------------------------------
+## ----echo = TRUE, eval = FALSE------------------------------------------------
 #  
 #  #...................
 #  # extract the log-id (required for the GPS data)
@@ -216,7 +216,7 @@ dt_sleep_heatmap
 #  # log_id
 #  
 
-## ---- echo = TRUE, eval = FALSE-----------------------------------------------
+## ----echo = TRUE, eval = FALSE------------------------------------------------
 #  
 #  #....................................................
 #  # return the gps-ctx data.table for the output log-id
@@ -230,7 +230,7 @@ dt_sleep_heatmap
 #  # res_tcx
 #  
 
-## ---- echo = TRUE-------------------------------------------------------------
+## ----echo = TRUE--------------------------------------------------------------
 
 #................................
 # Create the Leaflet / LeafGL Map
@@ -242,12 +242,12 @@ res_lft = fitbitViz::leafGL_point_coords(dat_gps_tcx = res_tcx,
                                          option_viewer = rstudioapi::viewer,
                                          CRS = 4326)
 
-## ---- echo = TRUE-------------------------------------------------------------
+## ----echo = TRUE--------------------------------------------------------------
 
 res_lft
 
 
-## ---- echo = FALSE------------------------------------------------------------
+## ----echo = FALSE-------------------------------------------------------------
 
 #.................................
 # DT::datatable() for the GPS data
@@ -265,12 +265,12 @@ dt_gps_tcx = DT::datatable(data = res_tcx,
 dt_gps_tcx
 
 
-## ---- echo = FALSE, eval = FALSE----------------------------------------------
+## ----echo = FALSE, eval = FALSE-----------------------------------------------
 #  
 #  # reference for the st_buffer function:  https://stackoverflow.com/a/54754935
 #  
 
-## ---- echo = TRUE-------------------------------------------------------------
+## ----echo = TRUE--------------------------------------------------------------
 
 #...................................................
 # compute the sf-object buffer and the raster-extend  (1000 meters buffer)
@@ -283,7 +283,7 @@ sf_rst_ext = fitbitViz::extend_AOI_buffer(dat_gps_tcx = res_tcx,
 # sf_rst_ext
 
 
-## ---- echo = TRUE, eval = FALSE-----------------------------------------------
+## ----echo = TRUE, eval = FALSE------------------------------------------------
 #  
 #  #..................................................................
 #  # Download the Copernicus DEM 30m elevation data
@@ -338,7 +338,7 @@ sf_rst_ext = fitbitViz::extend_AOI_buffer(dat_gps_tcx = res_tcx,
 #  # terra::plot(raysh_rst)
 #  
 
-## ---- echo = TRUE-------------------------------------------------------------
+## ----echo = TRUE--------------------------------------------------------------
 
 linestring_dat = fitbitViz::gps_lat_lon_to_LINESTRING(dat_gps_tcx = res_tcx,
                                                       CRS = 4326,
@@ -346,7 +346,7 @@ linestring_dat = fitbitViz::gps_lat_lon_to_LINESTRING(dat_gps_tcx = res_tcx,
                                                       verbose = VERBOSE)
 
 
-## ---- echo = TRUE-------------------------------------------------------------
+## ----echo = TRUE--------------------------------------------------------------
 
 idx_3m = c(which.min(res_tcx$AltitudeMeters), 
            as.integer(length(res_tcx$AltitudeMeters) / 2), 
@@ -356,7 +356,7 @@ cols_3m = c('latitude', 'longitude', 'AltitudeMeters')
 dat_3m = res_tcx[idx_3m, ..cols_3m]
 
 
-## ---- echo = TRUE, eval = FALSE-----------------------------------------------
+## ----echo = TRUE, eval = FALSE------------------------------------------------
 #  
 #  #.....................................................
 #  # Conversion of the 'SpatRaster' to a raster object
